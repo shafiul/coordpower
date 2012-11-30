@@ -16,13 +16,15 @@ class User extends CI_Controller {
     public function create(){
         
         $role = $this->input->post('role');        
-        $username = $this->input->post('username');
+        $name = $this->input->post('name');
         $password = $this->input->post('password');
         $email = $this->input->post('email');
+        $mobile_number = $this->input->post('mobile_number');
         
         $this->_load_model();
         
-        $this->user->insert_user($username,$password,$email,$role);        
+        $this->user->insertUser($name, $password, $role, $email, $mobile_number);
+        
         $this->load_view('user_reg_succes');
     }
     
@@ -54,7 +56,7 @@ class User extends CI_Controller {
         
         $this->_load_model();
         
-        $users = $this->get($start,$limit);
+        $users = $this->user_model->getAllUsers($start,$limit);
         
         $this->load_view('user_model',array('user',$users));
         

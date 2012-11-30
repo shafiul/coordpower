@@ -2,7 +2,7 @@
 
 class Committee extends CI_Controller {
 
-    private $_model_name = "committee";
+    private $_model_name = "committee_member";
             
     public function index()
     {
@@ -25,7 +25,7 @@ class Committee extends CI_Controller {
             $user_ids[] = array( $user_ids );
         }
         foreach( $user_ids as $a_user_id ){
-            $this->committee->create($union_id,$a_user_id);
+            $this->committee_member->create($union_id,$a_user_id);
         }
         
         
@@ -38,7 +38,7 @@ class Committee extends CI_Controller {
         
         $this->_load_model();
         
-        $this->committee->delete($committee_id);
+        $this->committee_member->delete($committee_id);
         
     }
     
@@ -48,7 +48,7 @@ class Committee extends CI_Controller {
         $limit = 100;
         
         $this->_load_model();
-        $this->committee->get($start,$limit);
+        $this->committee_member->get($start,$limit);
         
         $this->load_view('committee_view');
         

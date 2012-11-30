@@ -16,6 +16,7 @@ class Meeting extends CI_Controller {
     
     public function create(){
         
+        $union_code = $this->input->post('union_code');
         $date = $this->input->post('date');
         $time = $this->input->post('time');
         $president = $this->input->post('president');
@@ -23,7 +24,7 @@ class Meeting extends CI_Controller {
         
         $this->_load_model();
         
-        $this->meeting->create($date,$time,$president,$place);
+        $this->meeting->insertMeetingInfo($union_code, $date, $time, $president, $place);
         
         $this->load_view('after_create');                
         
@@ -84,10 +85,6 @@ class Meeting extends CI_Controller {
     
     public function send_notification(){
         
-//        $user_id = $this->input->post('user_id');
-//        
-//        $this->load_model('')
-//        $notification = 
         
     }
     

@@ -6,7 +6,7 @@ class Department extends CI_Controller {
             
     public function index()
     {
-        $this->bootstrap->viewLoader();
+        
     }
     
     private function _load_model(){
@@ -21,7 +21,9 @@ class Department extends CI_Controller {
         
         $this->department->create($name);
         
-        $this->load_view('after_create');
+        $this->bootstrap->viewLoader(
+                'department/create'
+        );        
         
     }
     
@@ -33,7 +35,9 @@ class Department extends CI_Controller {
         
         $this->department->delete($id);
         
-        $this->load_view('after_delete');
+        $this->bootstrap->viewLoader(
+                'department/after_delete'
+        );
         
     }
     
@@ -46,7 +50,16 @@ class Department extends CI_Controller {
         
         $this->department->update($id,$name);
         
-        $this->load_view('after_department');
+        $this->bootstrap->viewLoader(
+                'department/after_update'
+        );
+        
+    }
+    
+    public function list_department(){
+        
+        $this->_load_model();
+//        $dept_info = $this->input->
         
     }
     
