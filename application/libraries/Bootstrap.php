@@ -14,9 +14,23 @@ class Bootstrap {
         $this->ci = & get_instance();;
     }
 
-    function viewLoader($viewFiles = array()) {
+    function viewLoader($viewFile='', $data= array(), $headerData = array() ) {
         
-        $this->ci->load->view('bootstrap/index');
+        if( empty($viewFile) ){
+            $viewFile = 'body' ;
+        }
+        
+        if( empty($headerData) ){
+            $headerData = array('title' => 'Coordination Power');
+        }
+        
+        
+        $this->ci->load->view('bootstrap/header', $headerData );
+        $this->ci->load->view('bootstrap/sidebar');
+        
+        $this->ci->load->view($viewFile, $data);
+        
+        $this->ci->load->view('bootstrap/footer');
         
     }
 
