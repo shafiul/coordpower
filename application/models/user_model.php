@@ -15,20 +15,38 @@ class User_model extends CI_Model {
     function getAllUsers() {
         return $this->db->get(TABLE_USER)->result();
     }
-    
-    function userExist($username){
-        return count( $this->db->get_where(TABLE_USER, array('user_id'=>$username))->result()) == 1;
+
+    function getUserDetailsByMail($email) {
+        $result = $this->db->get_where(TABLE_USER, array('email' => $email))->result();
+        return $result[0];
     }
-    
-    function insertUser($userId, $password, $role, $email){
-        if($this->userExist($username)) return false;
-        
+
+    function getUserDetailsByUserId($userId) {
+        $array = $this->db->get_where(TABLE_USER, array('user_id' => $userId))->result();
+        return $array[0];
+    }
+
+    function userExist($userId) {
+        return count($this->db->get_where(TABLE_USER, array('user_id' => $userId))->result()) == 1;
+    }
+
+    function insertUser($name, $password, $role, $email, $mobileNumber) {
+        if ($this->userExist($userId))
+            return false;
+
         $this->db->set(array(
-            'user_id'=>$userId, 
-            'password'=> sha1($password),
-            'role'=>$role,
-            'email'=>$email));
+            'name' => $name,
+            'password' => sha1($password),
+            'role' => $role,
+            'email' => $email,
+            'mobile_number' => $mobileNumber));
         return $this->db->insert(TABLE_USER);
+    }
+
+    function makeLogIn($email, $password) {
+        if (count($this->db->get_where(TABLE_USER, array('email' => $email, 'password' => sha1($password)))->result()) == 1) {
+            $_SESSION['currentUser'] = $this->getUserDetails($email);
+        }
     }
 
 }

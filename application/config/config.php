@@ -14,7 +14,8 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/SanitationHackathon/git';
+
+ $config['base_url'] = 'http://localhost/SanitationHackathon/git';
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +70,9 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
+
 $config['language']	= 'english';
+
 
 /*
 |--------------------------------------------------------------------------
