@@ -21,6 +21,9 @@ $lang['Update User'] = "ব্যহারকারির তথ্য সম্
 $lang['Update Meeting'] = "সভার তথ্য সম্পাদনা";
 $lang['Update Committee'] = "কমিটির তথ্য সম্পাদনা";
 
+
+
+
 $lang['New user created'] = "নতুন একজন ব্যহারকারি  তৈরি করা হল ।";
 $lang['New Meeting created'] = "নতুন সভা আহবান করা  হল ।";
 $lang['New Committee formed'] = "নতুন কমিটি তৈরি করা হল ।";

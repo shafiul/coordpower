@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Committee extends CI_Controller {
+class Committee extends MY_Controller {
 
     private $_model_name = "committee_member";
             

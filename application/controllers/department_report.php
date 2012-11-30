@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Department_Report extends CI_Controller {
+class Department_Report extends MY_Controller {
 
     private $_model_name = "department_report";
     

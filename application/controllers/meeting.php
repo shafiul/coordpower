@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Meeting extends CI_Controller {
+class Meeting extends MY_Controller {
 
     private $_model_name = "meeting";
             

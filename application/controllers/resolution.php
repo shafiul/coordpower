@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Resolution extends CI_Controller {
+class Resolution extends MY_Controller {
 
             
     private $_model_name = "resolution";
