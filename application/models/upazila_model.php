@@ -11,9 +11,9 @@ class Upazilla_model extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
-    
-    function getAllUpazilas($districtId){
-        
+
+    function get($districtId) {
+        return $this->db->get_where(TABLE_UPAZILA, array('district_id' => $districtId))->result();
     }
 
 }
