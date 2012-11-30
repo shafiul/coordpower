@@ -12,8 +12,8 @@ class Division_model extends CI_Model {
         parent::__construct();
     }
     
-    function getAllDivisions(){
-        
+    function get(){
+        return $this->db->get(TABLE_DIVISION)->result();
     }
 
 }

@@ -11,9 +11,9 @@ class District_model extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
-    
-    function getAllDistricts($divisionId){
-        
+
+    function get($divisionId) {
+        return $this->db->get_where(TABLE_DISTRICT, array('division_id' => $divisionId))->result();
     }
 
 }

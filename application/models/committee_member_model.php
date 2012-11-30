@@ -11,21 +11,23 @@ class Committee_member_model extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
-    
-    
-    function getAllMemberIds($unionCode){
-        $member = $this->db->get_where(TABLE_COMMITTEE_MEMBER, array('union_code'=>$unionCode))->result();
-    }
-    
-    function insert($unionCode, $memberId){
-        
-    }
-    
-    function remove($unionCode, $memberId){
-        
+
+    function get($unionCode) {
+        $results = $this->db->get_where(TABLE_COMMITTEE_MEMBER, array('union_code' => $unionCode))->result();
+        $userIds = array();
+        foreach ($results as $result) {
+            $userIds[] = $result->user_id;
+        }
+        return $userIds;
     }
 
-    
+    function insert($unionCode, $memberId) {
+        return $this->db->insert(TABLE_COMMITTEE_MEMBER, array('union_code' => $unionCode, 'user_id' => $memberId));
+    }
+
+    function remove($unionCode, $memberId) {
+        return $this->db->delete(TABLE_COMMITTEE_MEMBER, array('union_code' => $unionCode, 'user_id' => $memberId));
+    }
 
 }
 
