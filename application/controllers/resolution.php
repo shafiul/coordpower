@@ -3,9 +3,15 @@
 class Resolution extends CI_Controller {
 
             
+    private $_model_name = "resolution";
+    
     public function index()
     {
         $this->bootstrap->viewLoader();
+    }
+    
+    private function _load_model(){
+        $this->load_model($this->_model_name."_model",$this->_model_name);
     }
 }
 
