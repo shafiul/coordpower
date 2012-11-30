@@ -12,7 +12,7 @@ class User_model extends CI_Model {
         parent::__construct();
     }
 
-    function getAllUsers() {
+    function get($offset, $limit) {
         return $this->db->get(TABLE_USER)->result();
     }
 
@@ -30,7 +30,7 @@ class User_model extends CI_Model {
         return count($this->db->get_where(TABLE_USER, array('user_id' => $userId))->result()) == 1;
     }
 
-    function insertUser($name, $password, $role, $email, $mobileNumber) {
+    function insert($name, $password, $role, $email, $mobileNumber) {
         if ($this->userExist($userId))
             return false;
 
@@ -41,6 +41,14 @@ class User_model extends CI_Model {
             'email' => $email,
             'mobile_number' => $mobileNumber));
         return $this->db->insert(TABLE_USER);
+    }
+
+    function update($userId, $name, $password, $role, $email, $mobileNumber) {
+        
+    }
+
+    function remove($userId) {
+        
     }
 
     function makeLogIn($email, $password) {

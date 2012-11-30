@@ -16,7 +16,17 @@ class Union_model extends CI_Model {
         
     }
     
-    function getUpazilaDetails()
+    function getUnionDetails($unionCode){
+        
+    }
+    
+    function insert($upazilaId, $unionCode, $name){
+        
+    }
+    
+    function remove($unionCode){
+        
+    }
 
 }
 
