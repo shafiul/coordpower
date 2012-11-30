@@ -52,6 +52,9 @@ $db['default']['hostname'] = 'localhost';
 if(gethostname() == 'hirayami-HP'){
     $db['default']['username'] = 'root';
     $db['default']['password'] = '';
+}else{
+   $db['default']['username'] = 'root';
+    $db['default']['password'] = ''; 
 }
 $db['default']['database'] = 'hackathonbd_2012';
 $db['default']['dbdriver'] = 'mysql';

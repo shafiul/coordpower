@@ -44,7 +44,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">UPDC Coordinator</a>
+                    <a class="brand" href="#"> <?php echo lang('app_title'); ?> </a>
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
                             Logged in as <a href="#" class="navbar-link">Username</a>
@@ -60,4 +60,4 @@
 
         <div class="container-fluid">
             <div class="row-fluid">
-               
+              

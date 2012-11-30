@@ -4,10 +4,11 @@ class Viewtest extends CI_Controller {
 
     function index() {
         $this->bootstrap->viewLoader(
-                'login'
+                'user/create'
         )
 
         ;
     }
 
 }
+
