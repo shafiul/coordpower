@@ -11,12 +11,20 @@ class Meeting_model extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
-    
-    function getMeetingDetails($meetingId){
+
+    function get($meetingId) {
+        
+    }
+
+    function insert($unionCode, $date, $time, $president, $place) {
+        
+    }
+
+    function update($meetingId, $unionCode, $date, $time, $president, $place) {
         
     }
     
-    function insertMeetingInfo($unionCode, $date, $time, $president, $place){
+    function delete($meetingId){
         
     }
 

@@ -13,11 +13,15 @@ class Committee_member_model extends CI_Model {
     }
     
     
-    function getAllMemberIds($unionId){
-        $member = $this->db->get_where(TABLE_COMMITTEE_MEMBER, array('union_id'=>$unionId))->result();
+    function getAllMemberIds($unionCode){
+        $member = $this->db->get_where(TABLE_COMMITTEE_MEMBER, array('union_code'=>$unionCode))->result();
     }
     
-    function updateMember($unionId, $memberId){
+    function insert($unionCode, $memberId){
+        
+    }
+    
+    function remove($unionCode, $memberId){
         
     }
 
