@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Committee extends CI_Controller {
+class Meeting extends CI_Controller {
 
             
     public function index()
@@ -8,11 +8,8 @@ class Committee extends CI_Controller {
         $this->bootstrap->viewLoader();
     }
     
-    public function create(){
-        
-    }
     
-    public function delete(){
+    public function create(){
         
     }
     
@@ -20,9 +17,22 @@ class Committee extends CI_Controller {
         
     }
     
+    public function delete(){
+        
+    }
+    
+    public function attendence(){
+        
+    }
+    
     public function view(){
         
     }
+    
+    public function send_notification(){
+        
+    }
+    
     
 }
 

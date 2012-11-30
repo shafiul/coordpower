@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Committee extends CI_Controller {
+class Report extends CI_Controller {
 
             
     public function index()
@@ -8,22 +8,21 @@ class Committee extends CI_Controller {
         $this->bootstrap->viewLoader();
     }
     
-    public function create(){
+    public function generate_report(){
         
     }
     
-    public function delete(){
+    public function get_report(){
         
     }
     
-    public function update(){
+    public function show_all_report(){
         
     }
     
-    public function view(){
+    public function show_stats(){
         
     }
-    
 }
 
 /* End of file welcome.php */
