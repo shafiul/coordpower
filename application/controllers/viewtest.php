@@ -11,3 +11,4 @@ class Viewtest extends CI_Controller {
     }
 
 }
+

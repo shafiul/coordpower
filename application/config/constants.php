@@ -37,5 +37,19 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+
+define('TABLE_USER', 'user');
+define('TABLE_ATTENDANCE', 'attendance');
+define('TABLE_COMMITTEE_MEMBER', 'committee_member');
+define('TABLE_DEPARTMENT', 'department');
+define('TABLE_DEPARTMENT_REPORT', 'department_report');
+define('TABLE_DISTRICT', 'district');
+define('TABLE_MEETING', 'meeting');
+define('TABLE_UNION', 'union');
+define('TABLE_UPAZILA', 'upazila');
+
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
+
+
