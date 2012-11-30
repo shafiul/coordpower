@@ -9,6 +9,7 @@
 
         <!-- Le styles -->
         <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
         <style type="text/css">
             body {
                 padding-top: 60px;
@@ -43,7 +44,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Project name</a>
+                    <a class="brand" href="#">UPDC Coordinator</a>
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
                             Logged in as <a href="#" class="navbar-link">Username</a>
@@ -51,7 +52,6 @@
                         <ul class="nav">
                             <li class="active"><a href="#">Home</a></li>
                             <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
