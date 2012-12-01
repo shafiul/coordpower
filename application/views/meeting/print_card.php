@@ -2,7 +2,7 @@
 <div class="span10">
 
     <?php foreach ($attendees as $attendee) { ?>
-        <p> 
+        <p> <?php echo $union->name; ?>
 		ইউনিয়ন পরিষদ  <br/>
 		প্রাপকঃ <?php echo $attendee->name .'<br/>'. $attendee->designation ; ?> <br/> 
 		বিষয়ঃ ইউ ডি সি সি সভায় যোগদান প্রসঙ্গে। <br/>

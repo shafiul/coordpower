@@ -41,8 +41,10 @@ class Welcome extends CI_Controller {
         $this->load->model('Meeting_model');
         $meeting = $this->Meeting_model->getInfo($meetingId);
 
-        $randomToken = random_string('alnum', 10);
+        $this->load->model('Union_model');
+        $union = $this->Union_model->getUnionDetails($meeting->union_code);
 
+        $randomToken = random_string('alnum', 10);
 
         $this->load->model('Attendance_model');
         $attendeeIds = $this->Attendance_model->get($meetingId);
@@ -52,8 +54,7 @@ class Welcome extends CI_Controller {
             $attendees[] = $this->User_model->getUserDetailsByUserId($attendeeId);
         }
 
-
-        $this->bootstrap->viewLoader('meeting/print_card', array('attendees' => $attendees, 'meeting' => $meeting, 'token' => $randomToken));
+        $this->bootstrap->viewLoader('meeting/print_card', array('attendees' => $attendees, 'union' => $union, 'meeting' => $meeting, 'token' => $randomToken));
     }
 
     function report($meetingId = null) {
