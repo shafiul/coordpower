@@ -35,6 +35,8 @@ class Report extends MY_Controller {
     function create_test(){
         $this->bootstrap->viewLoader('report/create');
     }
+    
+    
 }
 
 /* End of file welcome.php */

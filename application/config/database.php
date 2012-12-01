@@ -67,6 +67,7 @@ if(gethostname() == 'hirayami-HP'){
     $db['default']['password'] = 'root';
     $db['default']['database'] = 'hackthon';
 }
+
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -18,12 +18,18 @@ class User_model extends CI_Model {
 
     function getUserDetailsByMail($email) {
         $result = $this->db->get_where(TABLE_USER, array('email' => $email))->result();
-        return $result[0];
+        if (empty($result))
+            return null;
+        else
+            return $result[0];
     }
 
     function getUserDetailsByUserId($userId) {
         $array = $this->db->get_where(TABLE_USER, array('user_id' => $userId))->result();
-        return $array[0];
+        if (empty($array))
+            return null;
+        else
+            return $array[0];
     }
 
     function userExist($userId) {
