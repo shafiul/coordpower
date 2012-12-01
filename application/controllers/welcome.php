@@ -71,14 +71,19 @@ class Welcome extends CI_Controller {
         $this->load->model('Meeting_model');
         $meeting = $this->Meeting_model->getInfo($meetingId);
 
+        $this->load->model('User_model');
+        $president = $this->User_model->getUserDetailsByUserId($meeting->president_id);
+
         $this->load->model('Report_model');
         $reports = $this->Report_model->get($meetingId);
 
-        $ths->bootstrap->viewLoader('meeting/report', array(
+        $data = array(
             'meeting' => $meeting,
             'reports' => $reports,
             'agendas' => $agendas,
-            'departments' => $departments));
+            'departments' => $departments,
+            'president' => $president);
+        $this->bootstrap->viewLoader('meeting/report', $data);
     }
 
 }
