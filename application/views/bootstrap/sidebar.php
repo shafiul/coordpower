@@ -15,7 +15,7 @@
             
             <li class="nav-header"><?php echo lang('menu_report_head');  ?></li>
             <li ><a href="<?php echo site_url('report/create_test'); ?>">প্রতিবেদন প্রদান</a></li>
-            <li ><a href="#"><?php echo lang('menu_report_all');  ?></a></li>
+            <li ><a href="<?php echo site_url('report/show_all_report'); ?>"><?php echo lang('menu_report_all');  ?></a></li>
 
 
 
