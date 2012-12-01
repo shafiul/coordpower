@@ -12,9 +12,13 @@ class Report_model extends CI_Model {
         parent::__construct();
     }
 
-    function get($meetingId, $type) {
-        $result = $this->db->get_where(TABLE_REPORT, array('meeting_id' => $meetingId, 'type' => $type));
-        return $result[0];
+    function get($meetingId, $type = null) {
+
+        if ($type == null) {
+            return $this->db->get_where(TABLE_REPORT, array('meeting_id' => $meetingId))->result();
+        } else {
+            return $this->db->get_where(TABLE_REPORT, array('meeting_id' => $meetingId, 'type' => $type))->result();
+        }
     }
 
     function isReportExist($meetingId, $type, $typeId) {

@@ -67,7 +67,7 @@ $autoload['libraries'] = array(
 */
 
 $autoload['helper'] = array(
-    'url', 'language'
+    'url', 'language', 'string'
 );
 
 

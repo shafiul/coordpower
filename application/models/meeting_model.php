@@ -13,7 +13,7 @@ class Meeting_model extends CI_Model {
     }
     
     function get( $offset, $limit){
-        return $this->db->get_where(TABLE_MEETING,  $offset, $limit)->result();
+        return $this->db->get(TABLE_MEETING,   $limit, $offset)->result();
     }
 
     function getInfo($meetingId) {
