@@ -38,6 +38,7 @@
             foreach ($reports as $report) {
                 ?>
                 <tr>
+                    <td></td>
                     <td><?php echo $counter; ?></td>
                     <td><?php if ($report->type == 'agenda') echo $agendas[$report->type_id]; else $departments[$report->type_id]; ?></td>
                     <td><?php echo $report->discussion; ?></td>
