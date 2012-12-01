@@ -42,6 +42,13 @@ class Meeting_model extends CI_Model {
     function remove($meetingId) {
         return $this->db->delete(TABLE_AGENDA, array('meeting_id'=>$meetingId));
     }
+    
+    
+    function getAll($start,$limit){
+        $results = $this->db->get_where(TABLE_MEETING,array(),$limit,$start)
+                ->result();
+        return $results[0];
+    }
 
 }
 

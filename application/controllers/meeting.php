@@ -10,7 +10,7 @@ class Meeting extends MY_Controller {
     }
     
     private function _load_model(){
-        $this->load_model($this->_model_name."_model",$this->_model_name);
+        $this->load->model($this->_model_name."_model",$this->_model_name);
     }
     
     
@@ -26,7 +26,7 @@ class Meeting extends MY_Controller {
         
         $this->meeting->insertMeetingInfo($union_code, $date, $time, $president, $place);
         
-        $this->load_view('after_create');                
+        $this->load->view('after_create');                
         
     }
     
@@ -41,7 +41,7 @@ class Meeting extends MY_Controller {
         
         $this->meeting->create($date,$time,$president,$place);
         
-        $this->load_view('after_update');                
+        $this->load->view('after_update');                
     }
     
     public function delete(){
@@ -52,7 +52,7 @@ class Meeting extends MY_Controller {
         
         $this->meeting->delete($id);
         
-        $this->load_view('after_delete');                
+        $this->load->view('after_delete');                
         
     }
     
@@ -75,11 +75,11 @@ class Meeting extends MY_Controller {
         $start = $this->input->get('start');        
         $limit = 10;
         
-        $this->load_model('meeting_model','meeting');
+        $this->_load_model('meeting_model','meeting');
         
-        $all_meetings = $this->meeting->get($start,$limit);
+        $all_meetings = $this->meeting->getAll($start,$limit);
                 
-        $this->load_view('show_meetings',array('all_meetings',$all_meetings));
+        $this->load->view('show_meetings',array('all_meetings',$all_meetings));
                 
     }
     

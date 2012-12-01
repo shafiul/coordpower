@@ -53,7 +53,7 @@ $autoload['packages'] = array();
 */
 
 $autoload['libraries'] = array(
-    'Bootstrap', 'database'
+    'Bootstrap', 'database','authex'
     );
 
 

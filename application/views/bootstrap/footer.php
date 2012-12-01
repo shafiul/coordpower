@@ -24,7 +24,10 @@
         <script src="<?php echo base_url(); ?>assets/js/bootstrap-carousel.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/bootstrap-typeahead.js"></script>-->
         
-        <script src="<?php echo base_url(); ?>assets/js/common.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/common.js"></script>        
+        <script src="<?php echo base_url(); ?>assets/js/jscharts.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/jquery-ui-1.8.21.custom.min.js"></script>
+        
 
     </body>
 </html>

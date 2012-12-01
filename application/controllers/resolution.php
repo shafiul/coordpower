@@ -11,7 +11,7 @@ class Resolution extends MY_Controller {
     }
     
     private function _load_model(){
-        $this->load_model($this->_model_name."_model",$this->_model_name);
+        $this->load->model($this->_model_name."_model",$this->_model_name);
     }
 }
 

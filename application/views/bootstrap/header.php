@@ -9,7 +9,9 @@
 
         <!-- Le styles -->
         <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
-        
+        <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">                          
+        <link href="<?php echo base_url(); ?>assets/css/smoothness/jquery-ui-1.8.21.custom.css" rel="stylesheet">                          
+  
         <style type="text/css">
             body {
                 padding-top: 60px;

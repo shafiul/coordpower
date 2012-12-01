@@ -12,6 +12,16 @@ $lang['password'] = "Password";
 $lang['retype_password'] = "Retype password";            
 $lang['up_code'] = "Union Code";
 
+$lang['index'] = "Index";
+
+$lang['discussion_index'] = "Discussion Index";
+
+$lang['discussion'] = "Discussion";
+
+$lang['decision'] = "Decision";
+
+$lang['responsiblee'] = "Responsiblee";
+
 $lang['Create New User'] = "Create New User";
 $lang['Create New Meeting'] = "Create New Meeting";
 $lang['Create New Committee'] = "Create New Committee";
@@ -31,10 +41,14 @@ $lang['Meeting deleted'] = "Meeting deleted.";
 $lang['Committee deleted'] = "Committee deleted.";
 
 
+$lang['Viewing Statstics for Departmental Attendence'] = "Viewing Statstics for Departmental Attendence";
+
+$lang['Viewing Statstics for Member Attendence'] = "Viewing Statstics for Member Attendence";
+
+$lang['Viewing Statstics for Resolution Submission'] = "Viewing Statstics for Resolution Submission";
 
 
-
-
+$lang['Filter'] = "Filter";
 
 
 
