@@ -9,7 +9,7 @@
 
         <!-- Le styles -->
         <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+        
         <style type="text/css">
             body {
                 padding-top: 60px;
@@ -23,6 +23,7 @@
             var base_url = "<?php echo base_url(); ?>";
         </script>
         <link href="<?php echo base_url(); ?>assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>

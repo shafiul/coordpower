@@ -51,3 +51,16 @@ body {
 .tdBody{
     padding-left: 20px;
 }
+
+.agendaTitle{
+    font-weight: bold;
+    padding: 5px;
+}
+
+.reportText{
+    min-height: 150px;
+}
+
+#reportSubmitTable tr td textArea{
+    min-height: 150px;
+}
