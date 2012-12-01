@@ -7,7 +7,7 @@ $lang['form_submit'] = 'জমা দিন';
 
 $lang['date'] = "তারিখ";
 $lang['time'] = "সময় ";
-$lang['president_name'] = "সভাপতির নাম";
+$lang['president'] = "সভাপতির নাম";
 $lang['place'] = "স্থান ";
 
 $lang['index'] = "ক্রমিক নং";
@@ -83,6 +83,9 @@ $lang['Filter'] = "বাছাই করন";
 
 $lang['Union Porishod Progess Stats'] = "ইউনিয়ন পরিষদ এর অগ্রগতির পরিসংখান";
 
+$lang['Union Rating Ploted in Google Map'] = "ইউনিয়ন পরিষদের কাজকর্মের মান কালার কোড দিয়ে ম্যাপ এ প্রদর্শন";
+
+$lang['Map Rating'] = "অঞ্চল ভিত্তিক পরিসংখান ";
 
 
 

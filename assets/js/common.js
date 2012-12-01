@@ -2,7 +2,7 @@
 
 function draw_attende_graph(){
     var myData = new Array(['ইউপি', 20], ['এনজিও', 20], ['সরকারি কর্মকর্তা', 40], ['গ্রামবাসি', 20]);
-    var colors = ['#FFCC00', '#FFFD00', '#CCFF00', '#99DF00'];
+    var colors = ['#FF0000', '#00FF00', '#fdf10F', '#90DFf0'];
     var myChart = new JSChart('view_attendee_pie', 'pie');
     myChart.setDataArray(myData);
     myChart.colorizePie(colors);
@@ -10,7 +10,7 @@ function draw_attende_graph(){
     myChart.setPieRadius(95);
     myChart.setPieUnitsFontSize(10);
     myChart.setPieUnitsColor('#474747');
-    myChart.setPieValuesColor('#474747');
+    myChart.setPieValuesColor('#470047');
     myChart.setPieValuesOffset(-10);
     myChart.setTitleColor('#fff');
     myChart.setSize(400, 250);
@@ -26,7 +26,7 @@ function draw_departmental_graph(){
     
     
     var colors = ['#FFCC00', '#FFFF00', '#CCFF00', '#99FF00',
-        '#33FF00', '#00FF66', '#00FF99', '#00FFCC', 
+        '#3300f0', '#f000F6', '#10FF09', '#00FFCC', 
         '#FF0000', '#FF3300', '#FF6600', '#FF9900'];
     var myChart = new JSChart('view_department_pie', 'pie');
     myChart.setDataArray(myData);
@@ -49,7 +49,7 @@ function draw_resolution_graph(){
         ['Nagda Simla', 8], ['Gohailbari', 10], ['Parkhi', 9], ['Durgapur', 8],
         ['Bhatgram', 5], ['Musshuddi', 6], ['Banail', 2], ['Bhatgram', 4]
     );
-    var colors = ['#FFCC00', '#FFFF00', '#CCFF00', '#99FF00', '#33FF00', '#00FF66', '#00FF99', '#00FFCC', '#FF0000', '#FF3300', '#FF6600', '#FF9900'];
+    var colors = ['#FFCC00', '#FFFF00', '#CCFF00', '#9900ff', '#30FF00', '#0fFFF6', '#ff0009', '#00FFCC', '#FF0000', '#FF3300', '#FF6600', '#FF9900'];
     var myChart = new JSChart('view_resolution_pie', 'pie');
     myChart.setDataArray(myData);
     myChart.colorizePie(colors);
@@ -67,7 +67,7 @@ function draw_resolution_graph(){
 
 function draw_progress_graph(){
     var myData = new Array(
-            ['12/01/2011', 69.5], ['12/03/2011', 2.8], ['12/05/2011', 5.6], ['12/08/2011', 2.8]);    
+            ['12/01/2011', 69.5], ['12/03/2011', 20.8], ['12/05/2011', 45.6], ['12/08/2011', 17.8]);    
 	var colors = ['#FA5E1F', '#FDCB3F', '#71D743', '#D23333'];
 	var myChart = new JSChart('view_progress_line', 'bar');
 	myChart.setDataArray(myData);

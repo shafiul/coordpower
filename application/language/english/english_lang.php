@@ -53,3 +53,5 @@ $lang['Filter'] = "Filter";
 
 
 $lang['Union Porishod Progess Stats'] = "Union Porishod Progess Stats";
+
+$lang['Union Rating Ploted in Google Map'] = "Union Rating Ploted in Google Map";
