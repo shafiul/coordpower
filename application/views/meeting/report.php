@@ -2,6 +2,10 @@
 <div class="span10">
 
     <div class="row-fluid">
+        
+        <br/>
+        <br/>
+        <br/>
 
         <table class="table">
             <tr>
@@ -34,13 +38,14 @@
             </th>
 
             <?php
-            $counter = 0;
+            $counter = 1;
             foreach ($reports as $report) {
                 ?>
                 <tr>
                     <td></td>
                     <td><?php echo $counter; ?></td>
-                    <td><?php if ($report->type == 'agenda') echo $agendas[$report->type_id]; else $departments[$report->type_id]; ?></td>
+                    <td><?php 
+                    if ($report->type == 'agenda') echo $agendas[$report->type_id]; else echo $departments[$report->type_id]; ?></td>
                     <td><?php echo $report->discussion; ?></td>
                     <td><?php echo $report->decision; ?></td>
                     <td><?php echo $report->responsiblee; ?></td>
