@@ -5,7 +5,7 @@
         
         <br />
         
-        <form class="form-signin" style="min-width: 800px;">
+        <form class="form-signin-nowidth" style="min-width: 800px;">
             
 
             <h2 class="form-signin-heading"><?php echo lang('form_report_create'); ?></h2>

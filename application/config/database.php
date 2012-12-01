@@ -56,7 +56,7 @@ if(gethostname() == 'hirayami-HP'){
     $db['default']['username'] = 'root';
     $db['default']['password'] = '';
     $db['default']['database'] = 'hackathonbd_2012';
-}else if(gethostname() == 'shantanu-n411Z'){
+}else if(gethostname() == 'shantanu-N411Z'){
     $db['default']['username'] = 'root';
     $db['default']['password'] = '';
     $db['default']['database'] = 'hackathonbd_2012';    
