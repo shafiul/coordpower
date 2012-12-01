@@ -26,7 +26,11 @@
         
         <script src="<?php echo base_url(); ?>assets/js/common.js"></script>        
         <script src="<?php echo base_url(); ?>assets/js/jscharts.js"></script>
-        <script src="<?php echo base_url(); ?>assets/js/jquery-ui-1.8.21.custom.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/jquery-ui-1.8.21.custom.min.js"></script>        
+        <script src="<?php echo base_url(); ?>assets/js/google-api.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/pts.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/map_init.js"></script>
+        
         
 
     </body>
