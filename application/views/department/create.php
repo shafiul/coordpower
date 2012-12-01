@@ -5,7 +5,7 @@
         
         <br />
         
-        <form class="form-signin">
+        <form class="form-signin" method="post" >
             
             <h2 class="form-signin-heading"><?php echo lang('Create New Department'); ?></h2>
             

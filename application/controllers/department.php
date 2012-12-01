@@ -3,14 +3,22 @@
 class Department extends MY_Controller {
 
     private $_model_name = "department";
-            
-    public function index()
-    {
-        
+    private $_ci = "";
+    
+    
+    private function _load_model(){                
+        $this->_ci->load->model($this->_model_name."_model",$this->_model_name);
     }
     
-    private function _load_model(){
-        $this->load_model($this->_model_name."_model",$this->_model_name);
+    public function __construct() {
+        parent::__construct();
+        $this->_ci  = get_instance();     
+    }
+    
+    public function index(){
+        $this->bootstrap->viewLoader(
+                'department/create'
+        );        
     }
     
     public function create(){
@@ -56,10 +64,15 @@ class Department extends MY_Controller {
         
     }
     
-    public function list_department(){
+    public function list_all(){
         
         $this->_load_model();
-//        $dept_info = $this->input->
+                
+        $dept_info = $this->input->get();
+        
+        $this->bootstrap->viewLoader(
+                'department/list_dipartment'
+        );
         
     }
     
