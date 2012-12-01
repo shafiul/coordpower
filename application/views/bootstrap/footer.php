@@ -2,7 +2,7 @@
             <hr>
 
             <footer>
-                <p>&copy; Company 2012</p>
+                <p>&copy; ইউনিয়ন উন্নয়ন কো-অর্ডিনেশন প্রকল্প, ২০১২</p>
             </footer>
 
         </div><!--/.fluid-container-->
