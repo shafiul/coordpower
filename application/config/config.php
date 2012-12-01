@@ -14,8 +14,9 @@
 | path to your installation.
 |
 */
-
- $config['base_url'] = '/coordpower';
+$config['base_url'] = '/coordpower';
+if(gethostname() == 'IR')
+    $config['base_url'] = 'http://localhost/SanitationHackathon/git';
 
 /*
 |--------------------------------------------------------------------------

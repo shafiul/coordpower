@@ -10,7 +10,7 @@ class User extends MY_Controller {
     }
     
     private function _load_model(){
-        $this->load_model($this->_model_name."_model",$this->_model_name);
+        $this->load->model($this->_model_name."_model",$this->_model_name);
     }
     
     public function create(){
@@ -25,7 +25,7 @@ class User extends MY_Controller {
         
         $this->user->insertUser($name, $password, $role, $email, $mobile_number);
         
-        $this->load_view('user_reg_succes');
+        $this->load->view('user_reg_succes');
     }
     
     public function delete(){
@@ -35,7 +35,7 @@ class User extends MY_Controller {
         $this->_load_model();
         
         $this->user->delete($id);
-        $this->load_view('after_delete');
+        $this->load->view('after_delete');
     }
     
     public function update(){
@@ -49,7 +49,7 @@ class User extends MY_Controller {
         
         $this->user->update($username,$password,$email);
         
-        $this->load_view('after_update');
+        $this->load->view('after_update');
     }
     
     public function view(){
@@ -58,7 +58,26 @@ class User extends MY_Controller {
         
         $users = $this->user_model->getAllUsers($start,$limit);
         
-        $this->load_view('user_model',array('user',$users));
+        $this->load->view('user_model',array('user',$users));
+        
+    }
+    
+    public function login(){
+        
+        if( $this->input->post('action') == 'do_login' ){
+            
+            $email = $this->input->post("email");
+            $password = $this->input->post('password');
+            
+            $this->_load_model();
+            
+            $this->user->makeLogIn($email,$password); 
+            
+            $this->bootstrap->viewLoader('user/home');
+            
+        }        
+        
+        $this->bootstrap->viewLoader( 'user/login' );
         
     }
     

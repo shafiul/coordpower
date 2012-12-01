@@ -2,7 +2,7 @@
 
 class All_Forms extends MY_Controller {
 
-    function index() {
+    function index() {        
         $this->bootstrap->viewLoader(
                 'user/create'
         );

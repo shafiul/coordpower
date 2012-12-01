@@ -24,10 +24,10 @@ class Authex {
 	if (!$this->loggedIn()) {
 	    return false;
 	} else {
-	    $this->_CI->load->model('user_model');
-	    $user = $this->_CI->user_model->get(0,1,array('email'=>$this->_CI->session->userdata("email")));	    	    
-	    if($user->count > 0)
-		return $user->data[0];
+	    $this->_CI->load->model('user_model');	    
+            $user = $this->_CI->user_model->getUserDetailsByMail($this->_CI->session->userdata("email"));
+	    if(count($user) == 1)
+		return $user;
 	    return false;
 	}
     }
@@ -54,7 +54,7 @@ class Authex {
     function login($email, $password,$type = "member") {
 		
 	$this->_CI->load->model('user_model');
-	$user = $this->_CI->user_model->get(0,1,array('email'=>$email,'password'=>md5($password),
+	$user = $this->_CI->user_model->get(0,1,array('email'=>$email,'password'=>  sha1($password),
 					    "type"=>$type,"status"=>'active')
 				    );  	
 	if($user->count == 0 ) {	    

@@ -60,6 +60,14 @@ class User_model extends CI_Model {
         return $this->db->delete(TABLE_USER, array('user_id' => $userId));
     }
 
+    
+    public function is_logged_in(){
+        if($_SESSION['currentUser']){
+          return true;   
+        }           
+        return false;
+    }
+    
     function makeLogIn($email, $password) {
         if (count($this->db->get_where(TABLE_USER, array('email' => $email, 'password' => sha1($password)))->result()) == 1) {
             $_SESSION['currentUser'] = $this->getUserDetails($email);

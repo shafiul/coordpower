@@ -10,7 +10,7 @@ class Committee extends MY_Controller {
     }
     
     private function _load_model(){
-        $this->load_model($this->_model_name."_model",$this->_model_name);
+        $this->load->model($this->_model_name."_model",$this->_model_name);
     }
     
     
@@ -29,7 +29,7 @@ class Committee extends MY_Controller {
         }
         
         
-        $this->load_view('after_create');
+        $this->load->view('after_create');
     }
     
     public function delete(){
@@ -50,7 +50,7 @@ class Committee extends MY_Controller {
         $this->_load_model();
         $this->committee_member->get($start,$limit);
         
-        $this->load_view('committee_view');
+        $this->load->view('committee_view');
         
     }
     

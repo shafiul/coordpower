@@ -10,7 +10,7 @@ class Department_Report extends MY_Controller {
     }
     
     private function _load_model(){
-        $this->load_model($this->_model_name."_model",$this->_model_name);
+        $this->load->model($this->_model_name."_model",$this->_model_name);
     }
     
     public function create(){
@@ -25,7 +25,7 @@ class Department_Report extends MY_Controller {
         
         $this->department->create($meeting_id,$dept_id,$discussion,$decision,$responsiblee);
         
-        $this->load_view('after_create');
+        $this->load->view('after_create');
         
     }
     
@@ -37,7 +37,7 @@ class Department_Report extends MY_Controller {
         
         $this->department->delete($id);
         
-        $this->load_view('after_delete');
+        $this->load->view('after_delete');
         
     }
     
@@ -50,7 +50,7 @@ class Department_Report extends MY_Controller {
         
         $this->department->update($id,$name);
         
-        $this->load_view('after_department');
+        $this->load->view('after_department');
         
     }
     
