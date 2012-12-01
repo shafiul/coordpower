@@ -11,7 +11,7 @@
             
             <input name="name" type="text" class="input-block-level" placeholder="Name">
             
-            <button class="btn btn-large btn-primary" type="submit">Create</button>
+            <button class="btn btn-large btn-primary" type="submit"> <?php echo lang('form_submit'); ?> </button>
         </form>
     </div>
 

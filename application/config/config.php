@@ -15,7 +15,7 @@
 |
 */
 
- $config['base_url'] = 'http://localhost/SanitationHackathon/git';
+ $config['base_url'] = '/coordpower';
 
 /*
 |--------------------------------------------------------------------------

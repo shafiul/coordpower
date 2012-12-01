@@ -29,3 +29,10 @@ body {
     padding: 7px 9px;
 }
 
+.tdLabel{
+    font-weight: bold;
+}
+
+.tdBody{
+    padding-left: 20px;
+}

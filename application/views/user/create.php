@@ -18,7 +18,7 @@
             <input name="upcode" type="text" class="input-block-level" placeholder="<?php echo lang('up_code'); ?>">
             
             
-            <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+            <button class="btn btn-large btn-primary" type="submit"><?php echo lang('form_submit'); ?></button>
         </form>
     </div>
 
