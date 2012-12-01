@@ -66,8 +66,8 @@
                             </select>
                         </p>
                         <ul class="nav">
-                            <li class="active"><a href="#"> <?php echo lang('menu_home'); ?> </a></li>
-                            <li><a href="#about"> <?php echo lang('menu_about'); ?> </a></li>
+                            <li class="active"><a href="<?php echo base_url(); ?>"> <?php echo lang('menu_home'); ?> </a></li>
+                            <li><a href="<?php echo site_url('about'); ?>"> <?php echo lang('menu_about'); ?> </a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

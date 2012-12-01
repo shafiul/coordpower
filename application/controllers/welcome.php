@@ -11,6 +11,7 @@ class Welcome extends CI_Controller {
     public $bootstrap;
 
     public function index() {
+        redirect('login');
 //            $this->load->model('Agenda_model');
 //            var_dump( $this->Agenda_model->get() );
 //            $this->load->model('Attendance_model');
