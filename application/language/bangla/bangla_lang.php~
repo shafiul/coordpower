@@ -79,7 +79,9 @@ $lang['To'] = "থেকে";
 
 $lang['Form'] = "হতে";
 
-$lang['Filter'] = "হতে";
+$lang['Filter'] = "বাছাই করন";
+
+$lang['Union Porishod Progess Stats'] = "";
 
 
 

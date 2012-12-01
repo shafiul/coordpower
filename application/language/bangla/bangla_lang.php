@@ -81,6 +81,8 @@ $lang['Form'] = "হতে";
 
 $lang['Filter'] = "বাছাই করন";
 
+$lang['Union Porishod Progess Stats'] = "ইউনিয়ন পরিষদ এর অগ্রগতির পরিসংখান";
+
 
 
 

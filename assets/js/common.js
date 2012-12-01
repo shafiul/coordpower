@@ -65,6 +65,36 @@ function draw_resolution_graph(){
     myChart.draw();
 }
 
+function draw_progress_graph(){
+    var myData = new Array(
+            ['12/01/2011', 69.5], ['12/03/2011', 2.8], ['12/05/2011', 5.6], ['12/08/2011', 2.8]);    
+	var colors = ['#FA5E1F', '#FDCB3F', '#71D743', '#D23333'];
+	var myChart = new JSChart('view_progress_line', 'bar');
+	myChart.setDataArray(myData);
+	myChart.colorizeBars(colors);	
+	myChart.setTitleColor('#8E8E8E');
+	myChart.setAxisNameX('Region');
+	myChart.setAxisNameY('%');
+	myChart.setAxisColor('#c6c6c6');
+	myChart.setAxisWidth(1);
+	myChart.setAxisNameColor('#9a9a9a');
+	myChart.setAxisValuesColor('#939393');
+	myChart.setAxisPaddingTop(60);
+	myChart.setAxisPaddingLeft(50);
+	myChart.setAxisPaddingBottom(60);
+	myChart.setTextPaddingBottom(20);
+	myChart.setTextPaddingLeft(15);
+	myChart.setTitleFontSize(11);
+	myChart.setBarBorderWidth(0);
+	myChart.setBarSpacingRatio(50);
+	myChart.setBarValuesColor('#737373');
+	myChart.setGrid(false);
+	myChart.setSize(616, 321);
+	myChart.setBackgroundImage('chart_bg.jpg');
+	myChart.draw();
+}
+
+
 $(document).ready(function(){
    
     $(".lang_switch_select").change(function(){
@@ -79,26 +109,29 @@ $(document).ready(function(){
         window.location = string[0] + "?lang="+$(this).val();
     });
    
-    
-    //Attendee
-    draw_attende_graph();
-    
-    
-    //Resolution
-    draw_resolution_graph();
-    
-    //
-    draw_departmental_graph();
-    
     $(".datepicker").datepicker({
         showButtonPanel: true,        
 	changeMonth: true,
 	changeYear: true,       
 	yearRange: '1950:2050',       
-	dateFormat: 'd M yy',
+	dateFormat: 'd M yy'
     });
 
+    if($("#view_attendee_pie").size()){
+        //Attendee
+        draw_attende_graph();
 
+
+        //Resolution
+        draw_resolution_graph();
+
+        //
+        draw_departmental_graph();
+
+        //
+        draw_progress_graph();
+
+    }
    
 });
 
