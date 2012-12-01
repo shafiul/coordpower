@@ -30,7 +30,7 @@ class User_model extends CI_Model {
         return count($this->db->get_where(TABLE_USER, array('user_id' => $userId))->result()) == 1;
     }
 
-    function insert($name, $password, $role, $email, $mobileNumber) {
+    function insert($name, $password, $role, $designation, $email, $mobileNumber) {
         if ($this->userExist($userId))
             return false;
 
@@ -38,16 +38,18 @@ class User_model extends CI_Model {
                     'name' => $name,
                     'password' => sha1($password),
                     'role' => $role,
+                    'designation' => $designation,
                     'email' => $email,
                     'mobile_number' => $mobileNumber)
         );
     }
 
-    function update($userId, $name, $password, $role, $email, $mobileNumber) {
+    function update($userId, $name, $password, $role, $designation, $email, $mobileNumber) {
         return $this->db->update(TABLE_USER, array(
                     'name' => $name,
                     'password' => sha1($password),
                     'role' => $role,
+                    'designation' => $designation,
                     'email' => $email,
                     'mobile_number' => $mobileNumber), array(
                     'user_id' => $userId)
