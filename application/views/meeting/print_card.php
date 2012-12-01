@@ -15,11 +15,8 @@
 		চেয়ারম্যান<br/>
 		<br/>
 		<br/>
-		<br/>
-		<br/>
-		<br/>
-		TOKEN.. <strong> <?php echo $token; ?> </strong>.
-        </p>
+                <img src="<?php echo base_url('files/barcode.jpg') ?>" width="200"/>
+         </p>
         <hr/>
     <?php break;} ?>
 
