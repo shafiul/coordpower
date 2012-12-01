@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 30, 2012 at 11:53 PM
+-- Generation Time: Dec 01, 2012 at 06:55 AM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `department` (
   `department_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text,
   PRIMARY KEY (`department_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `department`
@@ -103,7 +103,22 @@ CREATE TABLE IF NOT EXISTS `department` (
 INSERT INTO `department` (`department_id`, `name`) VALUES
 (1, 'asds'),
 (2, '1,2'),
-(3, 'asds');
+(3, 'asds'),
+(4, 'asds'),
+(5, '1,2'),
+(6, 'asds'),
+(7, 'asds'),
+(8, '1,2'),
+(9, 'asds'),
+(10, 'asds'),
+(11, '1,2'),
+(12, 'asds'),
+(13, 'asds'),
+(14, '1,2'),
+(15, 'asds'),
+(16, 'asds'),
+(17, '1,2'),
+(18, 'asds');
 
 -- --------------------------------------------------------
 
@@ -175,14 +190,16 @@ CREATE TABLE IF NOT EXISTS `report` (
   `type_id` int(11) NOT NULL,
   `discussion` text,
   `decision` text,
-  `responsiblee` text,
-  PRIMARY KEY (`meeting_id`,`type_id`)
+  `responsiblee` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `report`
 --
 
+INSERT INTO `report` (`meeting_id`, `type`, `type_id`, `discussion`, `decision`, `responsiblee`) VALUES
+(1, 'agenda', 1, 'discussionasdasda', 'fasjfhakscbkh', 'afasvoasvba'),
+(1, 'department', 1, 'sfkjsd;bj;', ';vjbakjdbg', 'lkjskdbvsk;bv;ks');
 
 -- --------------------------------------------------------
 
@@ -245,6 +262,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_id`, `name`, `role`, `designation`, `password`, `email`, `mobile_number`) VALUES
-(1234, NULL, 'asdaisdas', '', 'a5cec7af5f7aab769cf0d4aa440e01c7bfc371b2', '', ''),
-(1235, 'dummy', 'asfa', '', 'sdgsd', '', ''),
-(1236, 'sdgsdg', 'sdgsd', '', 'sdgsdg', '', '');
+(1, 'sdgsdg', 'sdgsd', '', 'sdgsdg', '', ''),
+(2, 'dummy', 'asfa', '', 'sdgsd', '', ''),
+(1234, NULL, 'asdaisdas', '', 'a5cec7af5f7aab769cf0d4aa440e01c7bfc371b2', '', '');
