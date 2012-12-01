@@ -52,9 +52,21 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'hackathonbd_2012';
+if(gethostname() == 'hirayami-HP'){
+    $db['default']['username'] = 'root';
+    $db['default']['password'] = '';
+    $db['default']['database'] = 'hackathonbd_2012';
+}else if(gethostname() == 'shantanu-n411Z'){
+    $db['default']['username'] = 'root';
+    $db['default']['password'] = '';
+    $db['default']['database'] = 'hackathonbd_2012';    
+}else if(gethostname() == 'sadman-PC'){
+    
+}else{
+    $db['default']['username'] = 'root';
+    $db['default']['password'] = 'root';
+    $db['default']['database'] = 'hackthon';
+}
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
