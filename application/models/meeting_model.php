@@ -11,8 +11,12 @@ class Meeting_model extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
+    
+    function get( $offset, $limit){
+        return $this->db->get_where(TABLE_MEETING,  $offset, $limit)->result();
+    }
 
-    function get($meetingId) {
+    function getInfo($meetingId) {
         $results = $this->db->get_where(TABLE_MEETING, array('meeting_id' => $meetingId))->result();
         return $results[0];
     }
