@@ -7,7 +7,7 @@
         
         <form class="form-signin">
             
-            <h2 class="form-signin-heading">Create New User</h2>
+            <h2 class="form-signin-heading"><?php echo lang('Create New User'); ?></h2>
             
             <input name="fname" type="text" class="input-block-level" placeholder="<?php echo lang('full_name'); ?>">
             <input name="email" type="text" class="input-block-level" placeholder="<?php echo lang('email_address'); ?>">

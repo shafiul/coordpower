@@ -100,7 +100,7 @@ $autoload['config'] = array('ir_config');
 |
 */
 
-$autoload['language'] = array('all');
+$autoload['language'] = array('bangla');
 
 
 /*

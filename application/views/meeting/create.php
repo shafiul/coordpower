@@ -7,7 +7,7 @@
         
         <form class="form-signin">
             
-            <h2 class="form-signin-heading">Create Meeting</h2>
+            <h2 class="form-signin-heading"><?php echo lang('Create New Meeting'); ?></h2>
             
             <input name="date" type="text" class="input-block-level" placeholder="<?php echo lang('date'); ?>">
             <input name="time" type="text" class="input-block-level" placeholder="<?php echo lang('time'); ?>">

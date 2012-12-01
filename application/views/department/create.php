@@ -7,7 +7,7 @@
         
         <form class="form-signin">
             
-            <h2 class="form-signin-heading">Create A Department</h2>
+            <h2 class="form-signin-heading"><?php echo lang('Create New Department'); ?></h2>
             
             <input name="name" type="text" class="input-block-level" placeholder="Name">
             

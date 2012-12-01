@@ -19,6 +19,9 @@
                 padding: 9px 0;
             }
         </style>
+        <script type="text/javascript">
+            var base_url = "<?php echo base_url(); ?>";
+        </script>
         <link href="<?php echo base_url(); ?>assets/css/bootstrap-responsive.css" rel="stylesheet">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -46,8 +49,20 @@
                     </a>
                     <a class="brand" href="#"> <?php echo lang('app_title'); ?> </a>
                     <div class="nav-collapse collapse">
-                        <p class="navbar-text pull-right">
+<!--                    <p class="navbar-text pull-right">
                             Logged in as <a href="#" class="navbar-link">Username</a>
+                        </p>-->
+                        <p class="navbar-text pull-right">
+                            <select class="lang_switch_select" >
+                            <?php foreach($this->config->item("lang") as $a_lang): 
+                                
+                                $selected = "";
+                                if($_GET['lang'] == $a_lang)
+                                    $selected = "selected=selected" ;
+                            ?>
+                                <option <?php echo $selected; ?> ><?php echo $a_lang; ?></option>
+                            <?php endforeach; ?>
+                            </select>
                         </p>
                         <ul class="nav">
                             <li class="active"><a href="#">Home</a></li>
