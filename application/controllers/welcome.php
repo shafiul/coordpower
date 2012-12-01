@@ -3,7 +3,16 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Welcome extends MY_Controller {
+class Welcome extends CI_Controller {
+
+    /**
+     * @var Bootstrap
+     */
+    public $bootstrap;
+
+    public function index() {
+        
+    }
 
     function view($meetingId = null) {
         $this->load->model('Meeting_model');
@@ -31,7 +40,7 @@ class Welcome extends MY_Controller {
 
         $this->load->model('Meeting_model');
         $meeting = $this->Meeting_model->getInfo($meetingId);
-        
+
         $randomToken = random_string('alnum', 10);
 
 
@@ -42,34 +51,34 @@ class Welcome extends MY_Controller {
         foreach ($attendeeIds as $attendeeId) {
             $attendees[] = $this->User_model->getUserDetailsByUserId($attendeeId);
         }
-        
-        
-        $this->bootstrap->viewLoader('meeting/print_card', array('attendees' => $attendees, 'meeting' => $meeting, 'token'=>$randomToken));
+
+
+        $this->bootstrap->viewLoader('meeting/print_card', array('attendees' => $attendees, 'meeting' => $meeting, 'token' => $randomToken));
     }
-    
-    function report($meetingId = null){
-        if($meetingId == null){
+
+    function report($meetingId = null) {
+        if ($meetingId == null) {
             echo 'meeting id is null';
             return;
         }
-        
+
         $this->load->model('Agenda_model');
         $agendas = $this->Agenda_model->get();
-        
+
         $this->load->model('Department_model');
         $departments = $this->Department_model->get();
-        
+
         $this->load->model('Meeting_model');
         $meeting = $this->Meeting_model->getInfo($meetingId);
-        
+
         $this->load->model('Report_model');
         $reports = $this->Report_model->get($meetingId);
-        
+
         $ths->bootstrap->viewLoader('meeting/report', array(
-            'meeting'=>$meeting, 
-            'reports'=>$reports,
-            'agendas'=>$agendas,
-            'departments'=>$departments));
+            'meeting' => $meeting,
+            'reports' => $reports,
+            'agendas' => $agendas,
+            'departments' => $departments));
     }
 
 }
