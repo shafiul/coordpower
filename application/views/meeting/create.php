@@ -7,18 +7,16 @@
         
         <form class="form-signin">
             
-            <h2 class="form-signin-heading">Create New User</h2>
+
+            <h2 class="form-signin-heading"><?php echo lang('Create New Meeting'); ?></h2>
             
-            <input name="fname" type="text" class="input-block-level" placeholder="Full Name">
-            <input name="email" type="text" class="input-block-level" placeholder="Email address">
+            <input name="date" type="text" class="input-block-level" placeholder="<?php echo lang('date'); ?>">
+            <input name="time" type="text" class="input-block-level" placeholder="<?php echo lang('time'); ?>">
+            <input name="president" type="text" class="input-block-level" placeholder="<?php echo lang('president_name'); ?>">
+            <input name="place" type="text" class="input-block-level" placeholder="<?php echo lang('place'); ?>">
             
-            <input name="passwd" type="password" class="input-block-level" placeholder="Password">
-            <input name="passwd2" type="password" class="input-block-level" placeholder="Retype Password">
-            
-            <input name="upcode" type="text" class="input-block-level" placeholder="Union Parishad Code">
-            
-            
-            <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+            <button class="btn btn-large btn-primary" type="submit">Create</button>
+
         </form>
     </div>
 

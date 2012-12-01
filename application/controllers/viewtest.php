@@ -1,13 +1,13 @@
 <?php
 
-class Viewtest extends CI_Controller {
+class Viewtest extends MY_Controller {
 
     function index() {
         $this->bootstrap->viewLoader(
                 'user/create'
-        )
+        );
+        
 
-        ;
     }
 
 }

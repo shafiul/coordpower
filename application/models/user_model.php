@@ -12,23 +12,60 @@ class User_model extends CI_Model {
         parent::__construct();
     }
 
-    function getAllUsers() {
-        return $this->db->get(TABLE_USER)->result();
+    function get($offset, $limit) {
+        return $this->db->get(TABLE_USER, $offset, $limit)->result();
     }
-    
-    function userExist($username){
-        return count( $this->db->get_where(TABLE_USER, array('user_id'=>$username))->result()) == 1;
+
+    function getUserDetailsByMail($email) {
+        $result = $this->db->get_where(TABLE_USER, array('email' => $email))->result();
+        return $result[0];
     }
-    
-    function insertUser($userId, $password, $role, $email){
-        if($this->userExist($username)) return false;
-        
-        $this->db->set(array(
-            'user_id'=>$userId, 
-            'password'=> sha1($password),
-            'role'=>$role,
-            'email'=>$email));
-        return $this->db->insert(TABLE_USER);
+
+    function getUserDetailsByUserId($userId) {
+        $array = $this->db->get_where(TABLE_USER, array('user_id' => $userId))->result();
+        return $array[0];
+    }
+
+    function userExist($userId) {
+        return count($this->db->get_where(TABLE_USER, array('user_id' => $userId))->result()) == 1;
+    }
+
+    function insert($name, $password, $role, $email, $mobileNumber) {
+        if ($this->userExist($userId))
+            return false;
+
+        return $this->db->insert(TABLE_USER, array(
+                    'name' => $name,
+                    'password' => sha1($password),
+                    'role' => $role,
+                    'email' => $email,
+                    'mobile_number' => $mobileNumber)
+        );
+    }
+
+    function update($userId, $name, $password, $role, $email, $mobileNumber) {
+        return $this->db->update(TABLE_USER, array(
+                    'name' => $name,
+                    'password' => sha1($password),
+                    'role' => $role,
+                    'email' => $email,
+                    'mobile_number' => $mobileNumber), array(
+                    'user_id' => $userId)
+        );
+    }
+
+    function remove($userId) {
+        return $this->db->delete(TABLE_USER, array('user_id' => $userId));
+    }
+
+    function makeLogIn($email, $password) {
+        if (count($this->db->get_where(TABLE_USER, array('email' => $email, 'password' => sha1($password)))->result()) == 1) {
+            $_SESSION['currentUser'] = $this->getUserDetails($email);
+        }
+    }
+
+    function makeLogOut() {
+        $_SESSION['currentUser'] == null;
     }
 
 }

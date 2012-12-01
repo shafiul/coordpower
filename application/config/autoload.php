@@ -84,7 +84,7 @@ $autoload['helper'] = array(
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('ir_config');
 
 
 /*
@@ -100,7 +100,7 @@ $autoload['config'] = array();
 |
 */
 
-$autoload['language'] = array('all');
+$autoload['language'] = array('bangla');
 
 
 /*

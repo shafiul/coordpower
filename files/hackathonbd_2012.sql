@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 30, 2012 at 08:41 PM
+-- Generation Time: Nov 30, 2012 at 11:53 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -22,13 +22,32 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `agenda`
+--
+
+CREATE TABLE IF NOT EXISTS `agenda` (
+  `agenda_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  PRIMARY KEY (`agenda_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `agenda`
+--
+
+INSERT INTO `agenda` (`agenda_id`, `name`) VALUES
+(1, 'weMZ mfvi Kvh©weeiYx cvV I Aby‡gv`b'),
+(2, 'weMZ mfvi wm×vš— mg~n ev¯—evqb AMÖMwZ');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `attendance`
 --
 
-DROP TABLE IF EXISTS `attendance`;
 CREATE TABLE IF NOT EXISTS `attendance` (
   `meeting_id` int(11) NOT NULL,
-  `user_id` varchar(50) NOT NULL,
+  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`meeting_id`,`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -36,6 +55,10 @@ CREATE TABLE IF NOT EXISTS `attendance` (
 -- Dumping data for table `attendance`
 --
 
+INSERT INTO `attendance` (`meeting_id`, `user_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 1234);
 
 -- --------------------------------------------------------
 
@@ -43,21 +66,23 @@ CREATE TABLE IF NOT EXISTS `attendance` (
 -- Table structure for table `committee_member`
 --
 
-DROP TABLE IF EXISTS `committee_member`;
 CREATE TABLE IF NOT EXISTS `committee_member` (
-  `union_id` int(11) NOT NULL,
-  `user_id` varchar(50) NOT NULL,
-  PRIMARY KEY (`union_id`,`user_id`)
+  `union_code` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`union_code`,`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `committee_member`
 --
 
-INSERT INTO `committee_member` (`union_id`, `user_id`) VALUES
-(2447110, 'sdgsdg'),
-(2447183, '1234'),
-(2447183, 'eoifqeoif');
+INSERT INTO `committee_member` (`union_code`, `user_id`) VALUES
+(1, 1),
+(1, 2),
+(2, 3),
+(2447110, 0),
+(2447183, 0),
+(2447183, 1234);
 
 -- --------------------------------------------------------
 
@@ -65,38 +90,20 @@ INSERT INTO `committee_member` (`union_id`, `user_id`) VALUES
 -- Table structure for table `department`
 --
 
-DROP TABLE IF EXISTS `department`;
 CREATE TABLE IF NOT EXISTS `department` (
   `department_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text,
   PRIMARY KEY (`department_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `department`
 --
 
-
--- --------------------------------------------------------
-
---
--- Table structure for table `department_report`
---
-
-DROP TABLE IF EXISTS `department_report`;
-CREATE TABLE IF NOT EXISTS `department_report` (
-  `meeting_id` int(11) NOT NULL,
-  `department_id` int(11) NOT NULL,
-  `discussion` text,
-  `decision` text,
-  `responsiblee` text,
-  PRIMARY KEY (`meeting_id`,`department_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `department_report`
---
-
+INSERT INTO `department` (`department_id`, `name`) VALUES
+(1, 'asds'),
+(2, '1,2'),
+(3, 'asds');
 
 -- --------------------------------------------------------
 
@@ -104,7 +111,6 @@ CREATE TABLE IF NOT EXISTS `department_report` (
 -- Table structure for table `district`
 --
 
-DROP TABLE IF EXISTS `district`;
 CREATE TABLE IF NOT EXISTS `district` (
   `district_id` int(11) NOT NULL AUTO_INCREMENT,
   `division_id` int(11) DEFAULT NULL,
@@ -123,7 +129,6 @@ CREATE TABLE IF NOT EXISTS `district` (
 -- Table structure for table `division`
 --
 
-DROP TABLE IF EXISTS `division`;
 CREATE TABLE IF NOT EXISTS `division` (
   `division_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text,
@@ -141,18 +146,41 @@ CREATE TABLE IF NOT EXISTS `division` (
 -- Table structure for table `meeting`
 --
 
-DROP TABLE IF EXISTS `meeting`;
 CREATE TABLE IF NOT EXISTS `meeting` (
   `meeting_id` int(11) NOT NULL AUTO_INCREMENT,
+  `union_code` int(11) NOT NULL,
   `date` date DEFAULT NULL,
   `time` timestamp NULL DEFAULT NULL,
-  `president` text,
+  `president_id` int(11) DEFAULT NULL,
   `place` text,
   PRIMARY KEY (`meeting_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `meeting`
+--
+
+INSERT INTO `meeting` (`meeting_id`, `union_code`, `date`, `time`, `president_id`, `place`) VALUES
+(1, 2447165, '2012-12-01', '2012-12-01 05:03:05', 1, 'Dhaka');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `report`
+--
+
+CREATE TABLE IF NOT EXISTS `report` (
+  `meeting_id` int(11) NOT NULL,
+  `type` text NOT NULL,
+  `type_id` int(11) NOT NULL,
+  `discussion` text,
+  `decision` text,
+  `responsiblee` text,
+  PRIMARY KEY (`meeting_id`,`type_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `report`
 --
 
 
@@ -162,7 +190,6 @@ CREATE TABLE IF NOT EXISTS `meeting` (
 -- Table structure for table `union`
 --
 
-DROP TABLE IF EXISTS `union`;
 CREATE TABLE IF NOT EXISTS `union` (
   `union_code` int(11) NOT NULL,
   `upazila_id` int(11) DEFAULT NULL,
@@ -174,6 +201,9 @@ CREATE TABLE IF NOT EXISTS `union` (
 -- Dumping data for table `union`
 --
 
+INSERT INTO `union` (`union_code`, `upazila_id`, `name`) VALUES
+(2447165, 1, 'Pantha Para\r\n'),
+(2447183, 1, 'Natima\r\n');
 
 -- --------------------------------------------------------
 
@@ -181,7 +211,6 @@ CREATE TABLE IF NOT EXISTS `union` (
 -- Table structure for table `upazila`
 --
 
-DROP TABLE IF EXISTS `upazila`;
 CREATE TABLE IF NOT EXISTS `upazila` (
   `upazila_id` int(11) NOT NULL AUTO_INCREMENT,
   `district_id` int(11) DEFAULT NULL,
@@ -200,21 +229,22 @@ CREATE TABLE IF NOT EXISTS `upazila` (
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` varchar(50) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text,
   `role` text,
+  `designation` text NOT NULL,
   `password` text,
   `email` text NOT NULL,
+  `mobile_number` text NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1238 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `name`, `role`, `password`, `email`) VALUES
-('1234', NULL, 'asdaisdas', 'a5cec7af5f7aab769cf0d4aa440e01c7bfc371b2', ''),
-('eoifqeoif', 'dummy', 'asfa', 'sdgsd', ''),
-('sdgsdg', 'sdgsdg', 'sdgsd', 'sdgsdg', '');
+INSERT INTO `user` (`user_id`, `name`, `role`, `designation`, `password`, `email`, `mobile_number`) VALUES
+(1234, NULL, 'asdaisdas', '', 'a5cec7af5f7aab769cf0d4aa440e01c7bfc371b2', '', ''),
+(1235, 'dummy', 'asfa', '', 'sdgsd', '', ''),
+(1236, 'sdgsdg', 'sdgsd', '', 'sdgsdg', '', '');
